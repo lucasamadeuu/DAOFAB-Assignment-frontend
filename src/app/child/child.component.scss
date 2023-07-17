@@ -1,0 +1,59 @@
+form {
+  display: flex;
+  padding: 100px 200px;
+  flex-direction: column;
+  gap: 20px;
+
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .back-button {
+      background-color: #3f51b5;
+      border: none;
+      border-radius: 5px;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #2b3faf;
+    }
+
+    .back-button mat-icon {
+      color: white;
+    }
+  }
+
+  .tableContainer {
+    width: 100%;
+
+    .demo-table {
+      width: 100%;
+    }
+
+    .mat-elevation-z8,
+    .mat-mdc-elevation-specific.mat-elevation-z8 {
+      box-shadow: none !important;
+      border-bottom: 1px solid #e6e6e6;
+    }
+
+    .mdc-data-table__cell,
+    .mdc-data-table__header-cell {
+      padding: 0 50px 0 50px;
+    }
+
+    .mat-mdc-row:hover .mat-mdc-cell {
+      border-color: #c4c4c4;
+    }
+
+    .buttonPaid {
+      text-align: right !important;
+    }
+
+    .demo-row-is-clicked {
+      font-weight: bold;
+    }
+  }
+}

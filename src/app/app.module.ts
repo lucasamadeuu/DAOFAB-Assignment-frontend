@@ -12,11 +12,14 @@ import { ParentComponent } from './parent/parent.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
+import { ChildComponent } from './child/child.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ParentComponent
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatPaginatorModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [
     ApiService

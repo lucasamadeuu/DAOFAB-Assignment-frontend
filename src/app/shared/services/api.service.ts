@@ -14,4 +14,10 @@ export class ApiService {
 
         return this.http.get(parentUrl);
     }
+
+    getChildData(id: number) {
+        const parentUrl = `${this.baseUrl}/child-transactions/${id}`
+
+        return this.http.get(parentUrl);
+    }
 }

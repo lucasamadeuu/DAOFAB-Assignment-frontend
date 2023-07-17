@@ -3,7 +3,7 @@ import { ApiService } from '../shared/services/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs'
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { PageEvent } from '@angular/material/paginator';
 
@@ -28,7 +28,8 @@ export class ParentComponent {
   constructor(
     private api: ApiService,
     private snackbar: MatSnackBar,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   displayedColumns = ["id", "sender", "receiver", "totalAmount", "totalPaidAmount", "totalPaidAmountButton"]
@@ -49,6 +50,14 @@ export class ParentComponent {
   handlePageEvent(event: PageEvent) {
     this.searchForm.get('currentPage')?.setValue(event.pageIndex)
     this.getJsonData()
+  }
+
+  updateSearchParams() {
+    this.router.navigate([], { relativeTo: this.route, queryParams: this.searchForm.getRawValue() })
+  }
+
+  goToChild(id: number) {
+    this.router.navigate(['/child'], { queryParams: { id: id } });
   }
 
   getJsonData() {
@@ -78,5 +87,7 @@ export class ParentComponent {
         this.snackbar.open('No data found with these parameters', 'Undo,', { duration: 1200 });
       }
     });
+
+    this.updateSearchParams()
   }
 }
