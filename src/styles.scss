@@ -1,0 +1,21 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-body,
+.mat-body-2,
+.mat-typography .mat-body,
+.mat-typography .mat-body-2,
+.mat-typography {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: fantasy;
+  letter-spacing: 0.0178571429em;
+  background-color: #f2f3f6;
+}
